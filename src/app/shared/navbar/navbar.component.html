@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500" >
+    <div class="container">
+        <div class="navbar-translate">
+            <img class="navbar-brand" src="assets/img/angular2-logo.png" [routerLink]="['/']" height="80" width="80">
+            <button  class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
+                data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar" style="background-color: black"></span>
+                <span class="navbar-toggler-bar" style="background-color: black"></span>
+                <span class="navbar-toggler-bar" style="background-color: black"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left">
+                        <a class="nav-link" style="color: black" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-settings-gear-65"
+                                aria-hidden="true"></i>Operators</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                            class="dropdown-danger dropdown-menu-right">
+                            <a class="dropdown-item" >Oreedo</a>
+                            <a class="dropdown-item">TunisieTelecom</a>
+                            <a class="dropdown-item" >Orange</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left" *ngIf="user!=null">
+                        <a class="nav-link" style="color: black" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-settings-gear-65"
+                                aria-hidden="true"></i>My account</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                            class="dropdown-danger dropdown-menu-right">
+                            <a [routerLink]="['/products']" class="dropdown-item" >All products</a>
+                            <a class="dropdown-item" >My bookings</a>
+                            <a class="dropdown-item" >My quotes</a>
+                            <a class="dropdown-item" >My bills</a>
+                            <a class="dropdown-item" >My purchases</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left">
+                        <a  class="nav-link" id="dropdownBasic1" style="color: black"><i class="nc-icon nc-settings-gear-65"
+                                aria-hidden="true" ></i>Contact</a>
+
+                    </div>
+                </li>
+                
+                <ng-template #popContent>
+                        <div class="section section-buttons" >
+                             <div style="overflow-y: scroll;height: 200px;">
+                                <div *ngFor="let a of Basket">
+                                        <span class="label label-default">{{a.name}}</span><span class="label label-default">{{a.qte}}</span><button type="button" (click)="removeFromBasket()" class="btn btn-default btn-just-icon"><i class="fa fa-minus" aria-hidden="true"></i></button><br>
+                             
+                                </div>
+                             </div> 
+                            <button type="button" (click)="test()" class="btn btn-primary btn-round">Book Basket</button>
+                               
+                        </div>
+                    </ng-template>
+<ng-template #popTitle>
+
+</ng-template>
+<li class="nav-item ">
+    <div *ngIf="user!=null">
+<button type="button" (click)="getBasketData()" class="btn btn-danger btn-link" placement="bottom"  [ngbPopover]="popContent" [popoverTitle]="popTitle">Basket</button>
+</div>
+</li>
+
+                <li class="nav-item">
+                    
+                    <div *ngIf="user==null">
+                            
+                        <a [routerLink]="['/login']"  class="btn btn-danger btn-round">LogIn</a>
+                    </div>
+                    <div *ngIf="user!=null">
+                            <a (click)="logout()" class="btn btn-danger btn-round">LogOut</a>
+                            
+                        </div>
+                </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+
