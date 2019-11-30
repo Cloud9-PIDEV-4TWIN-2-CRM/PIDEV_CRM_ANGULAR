@@ -18,7 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import {SimpleNotificationsModule} from 'angular2-notifications';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ClaimComponent } from './claim/claim.component';
+=======
+import { RegisterComponent } from './register/register.component';
+>>>>>>> 25fd17f714b0af4a29ca48ad99cc4d779269b747
 
 
 @NgModule({
@@ -43,7 +47,11 @@ import { ClaimComponent } from './claim/claim.component';
         NgbdModalContent,
         LoginComponent,
         ProductComponent,
+<<<<<<< HEAD
         ClaimComponent
+=======
+        RegisterComponent
+>>>>>>> 25fd17f714b0af4a29ca48ad99cc4d779269b747
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
