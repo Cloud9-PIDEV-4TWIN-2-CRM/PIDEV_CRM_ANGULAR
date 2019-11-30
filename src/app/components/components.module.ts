@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import {SimpleNotificationsModule} from 'angular2-notifications';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ClaimComponent } from './claim/claim.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         NgbdModalComponent,
         NgbdModalContent,
         LoginComponent,
-        ProductComponent
+        ProductComponent,
+        ClaimComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
