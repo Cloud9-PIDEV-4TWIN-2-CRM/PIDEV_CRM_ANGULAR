@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Claim } from 'Models/Claim';
 @Injectable({
     providedIn: 'root'
   })
@@ -15,8 +16,8 @@ return this.http.get<any[]>(this.usersUrl);
 }
 
 
-addClaim(idp: any,ido:any){
-  return  this.http.post(this.baseUrl+"/claim/?id_prospect"+idp+"&idOperator"+ido,null,{responseType: 'text'});
+addClaim(c:Claim,idp: any,ido:any){
+  return  this.http.post<Claim>(this.baseUrl+"/claim/?id_prospect"+idp+"&idOperator"+ido,c);
 }
 
 }
