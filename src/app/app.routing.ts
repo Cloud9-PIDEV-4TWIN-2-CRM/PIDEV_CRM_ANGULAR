@@ -10,8 +10,11 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
+<<<<<<< HEAD
 import { ClaimComponent } from './components/claim/claim.component';
+=======
 import { RegisterComponent } from './components/register/register.component';
+>>>>>>> 25fd17f714b0af4a29ca48ad99cc4d779269b747
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
